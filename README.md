@@ -27,12 +27,11 @@ Everything lives in `hosts.yaml`; the file is hot-reloaded on change
 # Search engine used for non-`go` queries.
 search_url: "http://search.example-domain/search"
 
-infra:                       # category -> keyword -> URL
+infra:
   router: "https://router.example-domain"
-  proxmox: "https://pxmx.example-domain"
 
 media:
-  jellyfin: "http://LAN_IP:8096"
+  jellyfin: "http://10.10.1.10:8096"
 ```
 
 - Categories (top-level mappings) group keywords in the menu page.
