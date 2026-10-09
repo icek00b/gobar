@@ -85,4 +85,4 @@ docker-compose.yml   Single-service deployment
 
 Open `/help` on a running instance: it shows the exact URL to register.
 Once registered with shortcut `go` (or as the default engine), the
-address bar accepts `go jellyfin`, `go proxmox`, or any plain search.
+address bar accepts `go x`, `go y`, or any plain search.
