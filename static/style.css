@@ -1,0 +1,96 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #111418;
+  color: #e6e6e6;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+}
+
+.panel {
+  width: 100%;
+  max-width: 560px;
+  background: #1c2026;
+  border: 1px solid #2c333c;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid #2c333c;
+  padding-bottom: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 1.1rem; letter-spacing: 0.08em; text-transform: uppercase; }
+h1 a { color: #8ab4f8; text-decoration: none; }
+
+nav a {
+  color: #9aa4b1;
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin-left: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+nav a:hover { color: #e6e6e6; background: #2c333c; }
+nav a.active { color: #8ab4f8; background: #2c333c; }
+
+.keyword-list {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+.category + .category { margin-top: 1.25rem; }
+
+.category h2 {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6b7684;
+  margin-bottom: 0.4rem;
+}
+
+.category ul { list-style: none; }
+.category li + li { border-top: 1px solid #232930; }
+
+.category a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #e6e6e6;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.category a:hover { background: #2c333c; color: #8ab4f8; }
+
+.keyword-list::-webkit-scrollbar { width: 8px; }
+.keyword-list::-webkit-scrollbar-thumb { background: #2c333c; border-radius: 4px; }
+
+/* Help page */
+.help { max-height: 75vh; overflow-y: auto; padding-right: 0.25rem; font-size: 0.92rem; }
+.help section + section { margin-top: 1.75rem; }
+.help h2 { font-size: 1rem; color: #8ab4f8; margin-bottom: 0.6rem; }
+.help h3 { font-size: 0.85rem; color: #9aa4b1; margin: 0.9rem 0 0.4rem; }
+.help p { margin: 0.4rem 0; line-height: 1.5; }
+.help ol { margin: 0.4rem 0 0.4rem 1.4rem; line-height: 1.6; }
+.help code {
+  background: #111418;
+  border: 1px solid #2c333c;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.85em;
+  color: #8ab4f8;
+}
+.help table { border-collapse: collapse; margin: 0.4rem 0; }
+.help td { padding: 0.25rem 0.75rem 0.25rem 0; vertical-align: top; }
+.help .note { color: #9aa4b1; font-size: 0.85rem; margin-top: 1rem; }

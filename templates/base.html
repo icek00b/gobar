@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}GoBar{% endblock %}</title>
+  <link rel="search" type="application/opensearchdescription+xml" title="GoBar" href="{{ url_for('opensearch') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="panel">
+    <header class="panel-header">
+      <h1><a href="/">GoBar</a></h1>
+      <nav>
+        <a href="/" class="{{ 'active' if active == 'keywords' else '' }}">Keywords</a>
+        <a href="/help" class="{{ 'active' if active == 'help' else '' }}">Help</a>
+      </nav>
+    </header>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

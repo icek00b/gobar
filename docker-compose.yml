@@ -1,0 +1,14 @@
+services:
+  gobar:
+    build: .
+    image: gobar:latest
+    container_name: gobar
+    restart: unless-stopped
+    ports:
+      - "${GOBAR_PORT:-5055}:5000"  # host 5000 is taken by docker-registry
+    volumes:
+      # Bring your own hosts.yaml — hot-reloads inside the container on change.
+      - ${GOBAR_HOSTS_FILE:-./hosts.yaml}:/app/hosts.yaml:ro
+    # Search engine lives in hosts.yaml (search_url); uncomment to override:
+    # environment:
+    #   GOBAR_SEARCH_URL: "http://search.example-domain/search"

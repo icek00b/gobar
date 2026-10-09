@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% set active = "help" %}
+{% block content %}
+    <div class="help">
+      <section>
+        <h2>Usage</h2>
+        <p>Type <code>go &lt;keyword&gt;</code> in your browser address bar to jump straight to a service.
+          Any other query is sent to SearXNG.</p>
+        <table>
+          <tr><td><code>go jellyfin</code></td><td>open the matching service</td></tr>
+          <tr><td><code>go</code></td><td>show this keyword list</td></tr>
+          <tr><td><code>anything else</code></td><td>search SearXNG</td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Add as a browser search engine</h2>
+
+        <h3>Chrome / Edge (desktop)</h3>
+        <ol>
+          <li>Open <strong>Settings → Search engine</strong> (or <code>chrome://settings/searchEngines</code>, <code>edge://settings/search</code>).</li>
+          <li>Under <strong>Site search</strong> click <strong>Add</strong> / <strong>Add from sites and apps</strong>.</li>
+          <li>Fill in:
+            <table>
+              <tr><td>Name</td><td><code>GoBar</code></td></tr>
+              <tr><td>Shortcut</td><td><code>go</code></td></tr>
+              <tr><td>URL with %s</td><td><code id="engine-url">http://THIS-HOST/?q=%s</code></td></tr>
+            </table>
+          </li>
+        </ol>
+
+        <h3>Firefox (desktop)</h3>
+        <ol>
+          <li>Open this page in a tab. Firefox auto-detects the OpenSearch entry and shows
+            <strong>Add "GoBar"</strong> next to the address bar — click it. (If you don't see it:
+            right-click the page → <strong>Search Settings</strong> → add
+            <code id="engine-url-ff">http://THIS-HOST/?q=%s</code> under "One-click search engines".)</li>
+          <li>Optionally set GoBar as the default search engine in
+            <strong>Settings → Search</strong> so the address bar routes through it.</li>
+        </ol>
+
+        <h3>Android (Chrome / Firefox)</h3>
+        <ol>
+          <li><strong>Chrome:</strong> <strong>Settings → Search engine → Add in the search engine selection</strong> is not available; install via desktop sync, or use a custom New Tab app pointing at this URL.</li>
+          <li><strong>Firefox for Android:</strong> <strong>Settings → Search → Add search engine</strong>, name <code>GoBar</code>,
+            URL <code id="engine-url-m">http://THIS-HOST/?q=%s</code>.</li>
+        </ol>
+
+        <p class="note">Tip: keep SearXNG as a second engine — GoBar forwards everything that is not
+          a <code>go</code> command to it, so one engine covers both.</p>
+      </section>
+    </div>
+    <script>
+      var url = location.origin + "/?q=%s";
+      document.querySelectorAll("[id^=engine-url]").forEach(function (el) { el.textContent = url; });
+    </script>
+{% endblock %}

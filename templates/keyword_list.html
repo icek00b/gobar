@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% set active = "keywords" %}
+{% block content %}
+    <div class="keyword-list">
+      {% for category, keywords in categories %}
+        <section class="category">
+          <h2>{{ category }}</h2>
+          <ul>
+            {% for keyword, url in keywords %}
+              <li><a href="/go/{{ keyword }}">{{ keyword }}</a></li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+    </div>
+{% endblock %}
