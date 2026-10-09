@@ -5,24 +5,12 @@ search_url: "http://search.example-domain/search"
 
 infra:
   router: "https://router.example-domain"
-  proxmox: "https://pxmx.example-domain"
-  portainer: "https://portainer.example-domain"
-  hass: "https://hass.example-domain"
-  iventoy: "http://LAN_IP:26000"
-  genmon: "http://LAN_IP_2:8000"
 
 media:
-  jellyfin: "http://LAN_IP_3:8096"
-  immich: "http://LAN_IP_4:2283/photos"
-  navidrome: "https://music.example-domain"
-  metube: "http://LAN_IP_3:8188"
-  metube-direct: "http://LAN_IP_3:6661"
-  soulseek: "http://LAN_IP_3:5030/searches"
+  jellyfin: "http://10.10.1.10:8096"
 
 downloads:
-  jdownloader: "http://LAN_IP_3:3129/index.html?deviceId=0#webinterface:downloads"
-  ed2k: "http://LAN_IP_3:4711"
-  prowlarr: "http://LAN_IP_3:9696"
+  prowlarr: "http://10.10.1.10:9696"
   frigate: "http://LAN_IP_4:5000"
 
 printing:
@@ -32,12 +20,4 @@ printing:
 content:
   wiki: "https://wiki.example-domain"
   books: "https://books.example-domain"
-  mealie: "http://LAN_IP_3:9927/g/home"
-  maps: "https://maps.example-domain/en/map/<MAP-ID>#18/45.59760/-75.40423"
-  reddit: "https://reddit.example-domain"
   lemmy: "https://lemmy.example-domain"
-
-tools:
-  cyberchef: "https://LAN_IP_5/cyberchef"
-  regex101: "http://LAN_IP_6:42069"
-  mainsail: "http://LAN_IP_7"
