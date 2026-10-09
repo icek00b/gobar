@@ -1,6 +1,6 @@
 # GoBar
 
-Keyword-based navigation bar in front of a search engine (SearXNG by default).
+Keyword-based navigation bar in front of a search engine.
 Register it as a browser search engine, then type either:
 
 | Input | Behavior |
